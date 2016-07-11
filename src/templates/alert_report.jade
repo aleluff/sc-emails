@@ -1,0 +1,155 @@
+doctype html
+html
+	head
+		include includes/head.jade
+	body
+		center
+			table#bodyTable(align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%")
+				tr
+					td#bodyCell(align="center" valign="top")
+						//- BEGIN TEMPLATE
+						table#templateContainer(border="0" cellpadding="0" cellspacing="0")
+							tr
+								td.preheaderContent(align="left" valign="top")
+									a.logo(href="wwww.soundcharts.com"): img(src="images/soundcharts.png" alt="soundcharts")
+							
+							tr
+								td(align="center" valign="top")
+									//- BEGIN HEADER
+									table#templateHeader.alert-report(border="0" cellpadding="0" cellspacing="0" width="100%")
+										tr
+											td(align="center")
+												table(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td.notif-bar
+															img.notif-icon(src="images/notif.png")
+															div New Peak positions
+									
+							//- END HEADER
+							tr
+								td(valign="top")
+									
+									//- BEGIN BODY
+									table#templateBody(border="0" cellpadding="0" cellspacing="0" width="100%")
+										tr
+											td.bodyContent(style="padding-top:0")
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h2 <a href="#"> Snoop Dogg </a>
+															h3 <a href="#"> Coolaid </a> <em> (Album)</em>
+
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td iTunes - Hip Hop / Rap
+													tbody
+														tr
+															td Australia
+															td: div # 104
+												
+
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 <a href="#"> Tha Last Meal </a> <em> (Album)</em>
+
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td iTunes - Hip Hop / Rap
+													
+													tbody
+														tr
+															td Canada
+															td: div # 129
+														tr
+															td Germany
+															td: div # 89
+														tr
+															td Switzerland
+															td: div # 43
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 <a href="#"> Super Crip </a>
+
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td iTunes - Hip Hop / Rap
+													tbody
+														tr
+															td Canada
+															td: div # 58
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 <a href="#"> Ten Toes Down </a>
+
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td iTunes - Hip Hop / Rap
+													tbody
+														tr
+															td Switzerland
+															td: div # 30
+
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h2 <a href="#"> Jay-Z </a>
+															h3 <a href="#"> Empire State of Mind (feat. Alicia Keys) </a>
+
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td iTunes - Hip Hop / Rap
+													tbody
+														tr
+															td Sweden
+															td: div # 6
+
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 <a href="#"> Run This Town (feat. Kanye West &amp; Rihanna) </a>
+
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%"	)
+													thead
+														tr
+															td
+															td iTunes - Hip Hop / Rap
+													tbody
+														tr
+															td Sweden
+															td: div # 62
+
+												table.templateButton(border="0" cellpadding="13" cellspacing="0" width="100%")
+													tr
+														td(width="10%")
+														td.buttonContent(valign="middle" align="center")
+															div: a(href="#") See more charts on Soundcharts
+														td(width="10%")
+
+												table.notice(border="0" cellpadding="13" cellspacing="0" width="100%")
+													tr
+														td
+															| Mail Generated on the <strong> 2016-07-06 at 1:09 pm </strong>
+															|<br> This email was generated due to the alerts you have set up in soundcharts.
+															|<br> You can edit them <a href="#">here.</a>
+							
+							//- END BODY
+							tr
+								td
+									//- BEGIN FOOTER
+									include includes/footer.jade

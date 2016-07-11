@@ -44,3 +44,5 @@ gulp.task('inlinecss', function() {
 });
 
 // gulp.task('default', ['sass', 'jade', 'watch'])
+// https://css-tricks.com/gulp-for-beginners/
+// http://codepen.io/mgmarlow/post/using-jade-with-gulp

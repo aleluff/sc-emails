@@ -1,7 +1,8 @@
 doctype html
 html
 	head
-		link(rel="stylesheet" type="text/css" href="css/style.css")
+		include includes/head.jade
+
 	body
 		center
 			table#bodyTable(align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%")
@@ -11,5 +12,511 @@ html
 						table#templateContainer(border="0" cellpadding="0" cellspacing="0")
 							tr
 								td.preheaderContent(align="left" valign="top")
-									a.logo(href="wwww.soundcharts.com")
-										img(src="https://nebulae2016.github.io/scmails/assets/img/soundcharts.png" alt="soundcharts")
+									a.logo(href="wwww.soundcharts.com"): img(src="images/soundcharts.png" alt="soundcharts")
+							
+							tr
+								td(align="center" valign="top")
+									//- BEGIN HEADER
+									table#templateHeader(border="0" cellpadding="0" cellspacing="0" width="100%")
+										tr
+											td(align="center")
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(align="center")
+															h1 7 Days Report
+															div.ruller: em Jun 27th - Jul 4th
+										tr
+											td(align="center")
+												table.artist-card(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(align="center")
+															h2 Rihanna
+															img.artistavatar(src="images/adelle.png" alt="soundcharts")
+									
+							//- END HEADER
+							tr
+								td(valign="top")
+									
+									//- BEGIN BODY
+									table#templateBody(border="0" cellpadding="0" cellspacing="0" width="100%")
+										tr
+											td.spacer &nbsp;
+										tr
+											td.bodyContent(style="padding-top:0")
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(align="center" width="100%")
+															h2 Social Report
+															div.ruller: em Social Analytics for the past 7 days
+													tr
+														td.spacer &nbsp; <br> &nbsp;
+												
+												table.report.social(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td New Fans
+															td Evolution
+													
+													tbody
+														tr
+															td
+																img(src="images/ico_youtube.png" style="width:25px; height:25px")
+															td.positive: div 120 184
+															td.positive: div 0.55%
+														tr
+															td
+																img(src="images/ico_facebook.png" style="width:25px; height:25px")
+															td.positive: div 15 160
+															td.positive: div 0.02%
+														tr
+															td
+																img(src="images/ico_twitter.png" style="width:25px; height:25px")
+															td.negative: div -226 484
+															td.negative: div -0.37%
+														tr
+															td
+																img(src="images/ico_soundcloud.png" style="width:31px; height:25px")
+															td.positive: div 10 243
+															td.positive: div 0.12%
+														tr
+															td
+																img(src="images/ico_instagram.png" style="width:25px; height:25px")
+															td.positive: div 174 012
+															td.positive: div 0.43%
+														tr
+															td
+																img(src="images/ico_spotify.png" style="width:25px; height:25px")
+															td.positive: div 24 733
+															td.positive: div 0.35%
+
+												table.templateButton(border="0" cellpadding="13" cellspacing="0" width="100%")
+													tr
+														td(width="10%")
+														td.buttonContent(valign="middle" align="center")
+															div: a(href="#") See More Social Reports
+														td(width="10%")
+										
+										tr
+											td.spacer &nbsp;
+										
+										tr
+											td.bodyContent
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(align="center" width="100%")
+															h2 Airplay Report
+															div.ruller: em Play count for the past 7 days
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 Chasing Pavements
+												
+												table.report.airplay(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td This week
+															td Last week
+													tbody
+														tr
+															td Netherlands
+															td: div 2
+															td: div 3
+														tr
+															td Belgium
+															td: div 1
+															td: div 2
+														tr
+															td USA
+															td: div 1
+															td: div 1
+														tr
+															td UK
+															td: div 2
+															td: div 3
+														tr
+															td France
+															td: div 2
+															td: div 1
+														tr
+															td Austria
+															td: div 0
+															td: div 1
+														tr
+															td Switzerland
+															td: div 0
+															td: div 1
+														tr
+															td Italy
+															td: div 1
+															td: div 0
+														tr
+															td Germany
+															td: div 1
+															td: div 0
+
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 Hello
+												
+												table.report.airplay(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td This week
+															td Last week
+													tbody
+														tr
+															td Netherlands
+															td: div 2
+															td: div 3
+														tr
+															td Belgium
+															td: div 1
+															td: div 2
+														tr
+															td USA
+															td: div 1
+															td: div 1
+														tr
+															td UK
+															td: div 2
+															td: div 3
+														tr
+															td France
+															td: div 2
+															td: div 1
+														tr
+															td Austria
+															td: div 0
+															td: div 1
+														tr
+															td Switzerland
+															td: div 0
+															td: div 1
+														tr
+															td Italy
+															td: div 1
+															td: div 0
+														tr
+															td Germany
+															td: div 1
+															td: div 0
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 Don't You Remember
+												
+												table.report.airplay(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td This week
+															td Last week
+													tbody
+														tr
+															td Netherlands
+															td: div 2
+															td: div 3
+														tr
+															td Belgium
+															td: div 1
+															td: div 2
+														tr
+															td USA
+															td: div 1
+															td: div 1
+												
+												table.templateButton(border="0" cellpadding="13" cellspacing="0" width="100%")
+													tr
+														td(width="10%")
+														td.buttonContent(valign="middle" align="center")
+															div: a(href="#") See More Social Reports
+														td(width="10%")
+										
+										tr
+											td.spacer &nbsp;
+
+										tr
+											td.bodyContent
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(align="center" width="100%")
+															h2 Playlist Report
+															div.ruller: em New playlist entries during the past 7 days
+
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 Hello
+												
+												table.report.playlist(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tbody
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Dinner with Friends
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Middagsmusik
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| If Trace Ran the Radio #ITRR - July '16
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Aktivitas Pagi
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Super Super Suicidal
+															
+															td: a(href="#"): img(src="images/ico_link.png")
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 Chasing Pavements
+											
+												table.report.playlist(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tbody
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Dinner with Friends	
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Middagsmusik
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| If Trace Ran the Radio #ITRR - July '16
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Aktivitas Pagi
+															td: a(href="#"): img(src="images/ico_link.png")
+														tr
+															td: a(href="#")
+																img(src="images/ico_spotify.png")
+																| Super Super Suicidal
+															td: a(href="#"): img(src="images/ico_link.png")
+							
+												table.templateButton(border="0" cellpadding="13" cellspacing="0" width="100%")
+													tr
+														td(width="10%")
+														td.buttonContent(valign="middle" align="center")
+															div: a(href="#") See More Playlist Reports
+														td(width="10%")
+										tr
+											td.spacer &nbsp;
+										
+										tr
+											td.bodyContent
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(align="center" width="100%")
+															h2 Charts Report
+															div.ruller: em Top positions for the past 7 days
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 Adele 25 <em> (Album)</em>
+
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td Amazon Pop
+															td Amazon Main
+													
+													tbody
+														tr
+															td Germany
+															td: div # 5
+															td: div # 12
+														tr
+															td UK
+															td: div # 1
+															td: div # 1
+														tr
+															td Spain
+															td: div # 4
+															td: div # 5
+														tr
+															td Italy
+															td: div # 30
+															td: div # 34
+														tr
+															td Canada
+															td: div # 5
+															td: div # 5
+														tr
+															td France
+															td: div # 24
+															td: div # 99
+												
+												table.heading(border="0" cellpadding="0" cellspacing="0" width="100%")
+													tr
+														td(width="100%")
+															h3 All I Ask
+												
+												table.report.charts(border="0" cellpadding="0" cellspacing="0" width="100%")
+													thead
+														tr
+															td
+															td Amazon Pop
+															td Amazon Main
+															td Amazon Main
+															td Amazon Main
+													tbody
+														tr
+															td Switzerland
+															td: div # 69
+															td: div # 18
+															td
+															td: div # 22
+														tr
+															td Netherlands
+															td: div # 59
+															td: div # 12
+															td
+															td: div # 3
+														tr
+															td Sweden
+															td: div # 50
+															td: div # 85
+															td: div # 22
+															td: div # 6
+														tr
+															td Norway
+															td: div # 38
+															td: div # 6
+															td: div # 22
+															td
+														tr
+															td Poland
+															td: div # 43
+															td: div # 8
+															td: div # 22
+															td
+														tr
+															td Greece
+															td: div # 25
+															td: div # 6
+															td: div # 22
+															td
+														tr
+															td Ireland
+															td: div # 50
+															td: div # 11
+															td: div # 22
+															td: div # 9
+														tr
+															td Denmark
+															td: div # 71
+															td: div # 117
+															td: div # 22
+															td: div # 2
+														tr
+															td Malaysia
+															td: div # 8
+															td: div # 1
+															td
+															td: div # 6
+														tr
+															td HK
+															td: div # 121
+															td: div # 14
+															td: div # 11
+															td: div # 34
+														tr
+															td NZ
+															td: div # 94
+															td: div # 160
+															td
+															td: div # 6
+														tr
+															td Singapore
+															td: div # 15
+															td: div # 20
+															td
+															td: div # 6
+														tr
+															td Indonesia
+															td: div # 1
+															td: div # 3
+															td
+															td: div # 6
+														tr
+															td Saudi Arabia
+															td: div # 6
+															td: div # 1
+															td
+															td: div # 6
+														tr
+															td Thailand
+															td: div # 70
+															td: div # 104
+															td
+															td: div # 6
+														tr
+															td United Arab Emirates
+															td: div # 67
+															td: div # 13
+															td
+															td: div # 6
+														tr
+															td Egypt
+															td: div # 52
+															td: div # 11
+															td
+															td: div # 6
+														tr
+															td Vietnam
+															td: div # 67
+															td: div # 111
+															td: div # 22
+															td: div # 6
+														tr
+															td Philippines
+															td: div # 7
+															td: div # 1
+															td: div # 22
+															td: div # 6
+
+												table.templateButton(border="0" cellpadding="13" cellspacing="0" width="100%")
+													tr
+														td(width="10%")
+														td.buttonContent(valign="middle" align="center")
+															div: a(href="#") See More Charts
+														td(width="10%")
+
+												table.notice(border="0" cellpadding="13" cellspacing="0" width="100%")
+													tr
+														td
+															| Mail Generated on the <strong> 2016-07-06 at 1:09 pm </strong>
+															|<br> This email was generated due to the alerts you have set up in soundcharts.
+															|<br> You can edit them <a href="#">here.</a>
+
+							//- END BODY
+							tr
+								td
+									//- BEGIN FOOTER
+									include includes/footer.jade
