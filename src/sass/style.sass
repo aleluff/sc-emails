@@ -404,20 +404,18 @@ $bodyContent-font: 				$font-family-base
 $bodyContent-font-size: 	$font-size-base
 $bodyContent-line-height: 150%
 
-.bodyContent
-	&.notareport
-		padding: 30px 15px
+td.bodyContent
 	background: $bodyContent-bg
 	+border-radius(2px)
 	color: $bodyContent-color
 	font-family: $bodyContent-font
 	font-size: $bodyContent-font-size
 	line-height: $bodyContent-line-height
-	padding-top: $boxpad/2
 	text-align: left
-	padding-right: 2px
-	padding-bottom: 2px
-	padding-left: 2px
+	padding: 2px
+	padding-top: $boxpad/2
+	&.notareport
+		padding: 30px 15px
 	a
 		&, &:link, &:visited, .yshortcuts
 			color: $dark
