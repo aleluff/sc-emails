@@ -32,7 +32,7 @@ gulp.task('browserSync', function() {
 
 gulp.task('watch', ['browserSync', 'sass', 'jade'], function (){
 	gulp.watch('src/sass/**/*.sass', ['sass']); 
-	gulp.watch('src/templates/*.jade', ['jade']);
+	gulp.watch('src/templates/**/*.jade', ['jade']);
 	gulp.watch('dist/*.html', browserSync.reload);
 });
 
