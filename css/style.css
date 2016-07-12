@@ -280,7 +280,7 @@ div.ruller {
 table.notice {
   border-top: 1px solid #F4F4F4; }
 
-.bodyContent {
+td.bodyContent {
   background: #FFFFFF;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -289,14 +289,12 @@ table.notice {
   font-family: "Helvetica";
   font-size: 13px;
   line-height: 150%;
-  padding-top: 15px;
   text-align: left;
-  padding-right: 2px;
-  padding-bottom: 2px;
-  padding-left: 2px; }
-  .bodyContent.notareport {
+  padding: 2px;
+  padding-top: 15px; }
+  td.bodyContent.notareport {
     padding: 30px 15px; }
-  .bodyContent a, .bodyContent a:link, .bodyContent a:visited, .bodyContent a .yshortcuts {
+  td.bodyContent a, td.bodyContent a:link, td.bodyContent a:visited, td.bodyContent a .yshortcuts {
     color: #242424;
     font-weight: normal;
     text-decoration: underline; }
