@@ -111,20 +111,21 @@ table.templateButton {
   table.templateButton a.yshortcuts {
     border: 0;
     border-collapse: separate !important;
-    color: white !important;
+    color: #FFFFFF !important;
     font-family: "Helvetica";
     font-size: 15px;
-    font-weight: bold !important;
     line-height: 100%;
     text-align: center;
     text-decoration: none !important; }
   table.templateButton td.buttonContent {
-    -moz-border-radius: 9px;
-    -webkit-border-radius: 9px;
-    border-radius: 9px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
     background: #242424;
     padding-left: 15px;
-    padding-right: 15px; }
+    padding-right: 15px;
+    -webkit-box-shadow: inset -1px -2px 0px #717171;
+    box-shadow: inset -1px -2px 0px #717171; }
   table.templateButton a {
     display: block;
     margin: 0 !important; }
@@ -170,16 +171,17 @@ td.preheaderContent {
       font-family: "Helvetica";
       background: #242424;
       font-size: 14px; }
-  #templateHeader .artist-card td {
-    padding-top: 30px;
-    padding-bottom: 30px; }
-  #templateHeader .artist-card .artistavatar {
-    width: 99px;
-    height: 99px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: 3px solid black; }
+
+.artist-card td {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.artist-card .artistavatar {
+  width: auto;
+  height: 99px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
 
 table.dailycharts-card td {
   padding: 30px; }
@@ -226,7 +228,7 @@ table.report {
   table.report a:link, table.report a:visited, table.report a .yshortcuts {
     color: #242424;
     font-weight: normal;
-    text-decoration: underline; }
+    text-decoration: none; }
   table.report tr:last-child td {
     border-bottom: 0; }
   table.report td {
@@ -237,8 +239,6 @@ table.report {
       width: 100%;
       max-width: 50px;
       text-align: right; }
-    table.report td a {
-      text-decoration: none !important; }
     table.report td.positive {
       border-bottom: 2px solid white;
       background: #C9FFC9; }
@@ -249,10 +249,8 @@ table.report {
 table.heading {
   margin: 30px 0 0; }
   table.heading h2 {
-    font-weight: bold;
     padding-left: 6px; }
     table.heading h2 a {
-      font-weight: bold !important;
       text-decoration: none !important; }
   table.heading h3 {
     padding-left: 7px;
@@ -307,7 +305,7 @@ table.notice {
   background-color: #F4F4F4; }
 
 .footerContent {
-  color: #808080;
+  color: #B9B9B9;
   font-family: "Helvetica";
   font-size: 11px;
   line-height: 150%;
@@ -333,16 +331,16 @@ table.notice {
     width: 100% !important;
     min-width: 100% !important; }
   h1 {
-    font-size: 24px !important;
+    font-size: 31px;
     line-height: 100% !important; }
   h2 {
-    font-size: 20px !important;
+    font-size: 24px !important;
     line-height: 100% !important; }
   h3 {
-    font-size: 18px !important;
+    font-size: 14px !important;
     line-height: 100% !important; }
   h4 {
-    font-size: 16px !important;
+    font-size: 13px !important;
     line-height: 100% !important; }
   #bodyTable {
     background: white;
@@ -361,12 +359,6 @@ table.notice {
     -webkit-border-radius: 0;
     border-radius: 0; }
   #templateContainer {
-    max-width: 600px !important;
-    width: 100% !important; }
-  #templatePreheader {
-    display: none !important; }
-  #headerImage {
-    height: auto !important;
     max-width: 600px !important;
     width: 100% !important; }
   .bodyContent {
