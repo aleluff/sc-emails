@@ -2,11 +2,18 @@
 $dark: #242424
 $gray-light: #F4F4F4
 $gray-medium: #B9B9B9
-$boxpad: 30px
 $saumone: #FD4A49
-$screen-xs: 480px
+$white: #FFFFFF
+
+// structure unit
+$boxpad: 30px
+
+// Typography generic
 $font-family-base: 'Helvetica'
 $font-size-base: 13px
+
+// Responsive
+$screen-xs: 480px
 
 // Les mixins 
 =margin($t, $r, $b, $l)
@@ -20,13 +27,15 @@ $font-size-base: 13px
 	-webkit-border-radius: $a
 	border-radius: $a
 
-=square($w)
-	width: $w
-	height: $w
+=size($width, $height: $width)
+	width: $width
+	height: $height
 
+=box-shadow($shadow...)
+	-webkit-box-shadow: $shadow // iOS <4.3 & Android <4.1
+	box-shadow: $shadow
 
 // --------
-
 // /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/
 #outlook a
 	padding: 0
@@ -86,8 +95,6 @@ body, #bodyTable
 // /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/
 
 // Typography -----------------------------
-
-// Typography
 $h1-color: #202020
 $h2-color: #404040
 $h3-color: #606060
@@ -100,6 +107,7 @@ $h4-font-size: 14px
 
 $headings-font-family: $font-family-base
 
+// Defaults mixin
 =defaults()
 	display: block
 	font-family: $headings-font-family
@@ -133,10 +141,9 @@ h4
 	+defaults
 
 // ------------------------------------
-
 // Buttons
 $button-bg: $dark
-$button-color: white
+$button-color: $white
 
 table.templateButton
 	a,
@@ -148,7 +155,7 @@ table.templateButton
 		color: $button-color!important
 		font-family: $font-family-base
 		font-size: 15px
-		font-weight: bold!important
+		// font-weight: bold!important
 		line-height: 100%
 		text-align: center
 		text-decoration: none!important
@@ -157,36 +164,24 @@ table.templateButton
 	margin-bottom: $boxpad
 	
 	td.buttonContent
-		+border-radius(9px)
+		+border-radius(4px)
 		background: $dark
 		padding-left: $boxpad/2
 		padding-right: $boxpad/2
+		+box-shadow(inset -1px -2px 0px lighten($dark, 30%))
+		// outline: 1px solid $dark
 	
 	a
 		display: block
 		margin: 0!important
 
-// *
-	// outline: 1px solid red
-// ------
 
-// ========== Page Styles ==========
+// Page Styles -------
 $email-w: 			600px 
 $bg-color: 			$gray-light
-$border-color: 	#CCCCCC
-
-// #templateContainer
-// 	max-width: $email-w
-
-// body, #bodyTable
-// 	background-color: $bg-color
-
-// #bodyCell
-	// tip : Set the border for your email.
-
 
 // ---------------------------------
-// Scafolding map
+// Layout structure map:
 // ---------------------------------
 table#bodyTable
 	tr
@@ -206,11 +201,13 @@ table#bodyTable
 						tr
 							td.footerContent
 
+
 // --------------------------------
 #bodyTable
 	max-width: 600px
-// Situated at the very top of your email
-// it contains the logo.
+
+
+// Situated at the very top of your email - contains the logo.
 td.preheaderContent
 	padding: 30px 10px 15px
 	background: $gray-light
@@ -233,14 +230,14 @@ td.preheaderContent
 			padding-left: 40px
 	
 	img.notif-icon
-		+square(32px)
+		+size(32px)// one value only means it's a square
 		float: left
-
 
 	h1
 		color: $saumone
 	h2
 		color: white
+
 	div.ruller
 		border-bottom: 1px solid darken($gray-medium, 40%)
 		em
@@ -251,19 +248,19 @@ td.preheaderContent
 	background: $dark
 	+border-radius(2px)
 
+// appears on 7 day report at the very top
+.artist-card
+	td
+		padding-top: $boxpad
+		padding-bottom: $boxpad
+	
+	.artistavatar
+		+size(auto, 99px)
+		+border-radius(3px)
+		// border: 3px solid black
 
-	.artist-card
-		td
-			padding-top: $boxpad
-			padding-bottom: $boxpad
-		
-		.artistavatar
-			+square(99px)
-			+border-radius(3px)
-			border: 3px solid black
 
-		// background: pink
-
+// appears on daily charts template.
 table.dailycharts-card
 	td
 		padding: $boxpad
@@ -275,10 +272,11 @@ table.dailycharts-card
 			font-weight: normal
 			font-style: normal
 			color: $gray-light
+	
 	h3
 		color: $gray-light
 
-// ========== Tables ============
+// All the report tables of all the different types.
 table.report
 	&.social
 		td:nth-child(1)
@@ -291,19 +289,22 @@ table.report
 		td
 			&:nth-child(1)
 				img
-					+square(18px)
+					+size(18px)// one value only means it's a square
 					float: left
 					margin-right: 10px
+			
 			&:nth-child(2)
 				width: 5%
 				min-width: 19px
 				img
-					+square(15px)
+					+size(15px)// one value only means it's a square
+	
 	&.charts
 	&.dailycharts
 	
 	width: 100%
-
+	
+	// the table head 
 	thead
 		border-bottom: 1px solid lighten(black, 81%)
 		td
@@ -311,56 +312,59 @@ table.report
 			// 	+border-radius(3px 0 0 0)
 			// &:last-child
 			// 	+border-radius(0 3px 0 0)
-
-			// text-align: center
 			padding: 4px 5px 2px
 			font-size: 12px
 			color: darken($gray-medium, 10%)
 			text-shadow: 1px 1px 0px #fcfcfc
 			font-weight: bold
 			background: lighten(black, 91%)
+	
 	a
 		&:link, &:visited, .yshortcuts
 			color: $dark
 			font-weight: normal
-			text-decoration: underline
+			text-decoration: none
 	
+	// removee the bottom border on the last line of the table.
 	tr:last-child td
 		border-bottom: 0
 	
+	// add a container div for table cells
+	// in order to right align the numbers.
+	// It makes it easier to look trough
 	td
 		> div
 			width: 100%
 			max-width: 50px
 			text-align: right
-		a
-			text-decoration: none!important
-		
+		// default table-cell styles.
 		border-bottom: 2px solid $gray-light
 		vertical-align: middle
 		padding: 6px 0 6px 6px
 		&.positive
+			// on this cells white border enhances visibility
 			border-bottom: 2px solid white
 			background: #C9FFC9
 		&.negative
+			// -*-
 			border-bottom: 2px solid white
 			background: #FFCCCB
 
-
+// Contains headings
 table.heading
 	margin: $boxpad 0 0
 	h2
-		font-weight: bold
+		// font-weight: bold
 		padding-left: 6px
 		a
-			font-weight: bold!important
+			// font-weight: bold!important
 			text-decoration: none!important
 	h3
 		a
 			font-weight: bold!important
 			text-decoration: none!important
 			color: $saumone!important
-		
+
 		padding-left: 7px 
 		padding-right: 7px
 		color: $saumone
@@ -368,7 +372,9 @@ table.heading
 		em
 			font-weight: normal
 			font-style: normal
-	
+
+// the ruller used in headings 
+// and the top header section
 div.ruller
 	border-bottom: 1px solid $gray-light
 	height: 9px
@@ -381,30 +387,9 @@ div.ruller
 		display: inline-block
 		background: white
 
+// the table meta : Mail Generated on ... etc
 table.notice
 	border-top: 1px solid $gray-light
-
-// .headerContent
-// 	a
-// 		&:link, &:visited, .yshortcuts
-// 			color: #EB4102
-// 			font-weight: normal
-// 			text-decoration: underline
-
-
-// *
-// 	outline: 1px solid red
-
-	// tab Header
-	// section header link
-	// tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
-
-// #headerImage
-// 	height: auto
-// 	max-width: 600px
-
-// *
-	// outline: 1px solid red
 
 // ========== Body Styles ==========
 	// tab Body
@@ -440,101 +425,18 @@ $bodyContent-line-height: 150%
 			text-decoration: underline
 
 
-
-
-
-// ========== Column Styles ==========
-
-// .templateColumnContainer
-// 	display: inline
-// 	width: 260px
-
-// #templateColumns
-// 	background-color: #F4F4F4
-// 	border-top: 1px solid #FFFFFF
-// 	border-bottom: 1px solid #CCCCCC
-
-
-// 	// @tab Columns
-// 	// @section left column text
-// 	// tip: Set the styling for your email's left column content text. Choose a size and color that is easy to read.
-
-// .leftColumnContent
-// 	color: #505050
-// 	font-family: Helvetica
-// 	font-size: 14px
-// 	line-height: 150%
-// 	padding-top: 0
-// 	padding-right: 0
-// 	padding-bottom: 20px
-// 	padding-left: 0
-// 	text-align: left
-// 	a
-// 		&:link, &:visited, .yshortcuts
-// 			color: #EB4102
-// 			font-weight: normal
-// 			text-decoration: underline
-
-
-// 	// @tab Columns
-// 	// @section left column link
-// 	// tip: Set the styling for your email's left column content links. Choose a color that helps them stand out from your text.
-
-
-// 	// @tab Columns
-// 	// @section right column text
-// 	// tip: Set the styling for your email's right column content text. Choose a size and color that is easy to read.
-
-// .rightColumnContent
-// 	color: #505050
-// 	font-family: Helvetica
-// 	font-size: 14px
-// 	line-height: 150%
-// 	padding-top: 0
-// 	padding-right: 0
-// 	padding-bottom: 20px
-// 	padding-left: 0
-// 	text-align: left
-// 	a
-// 		&:link, &:visited, .yshortcuts
-// 			color: #EB4102
-// 			font-weight: normal
-// 			text-decoration: underline
-
-
-	// @tab Columns
-	// @section right column link
-	// tip: Set the styling for your email's right column content links. Choose a color that helps them stand out from your text.
-
-// .leftColumnContent img, .rightColumnContent img
-// 	display: inline
-// 	height: auto
-// 	max-width: 260px
-
-// ========== Footer Styles ==========
-
-
-	// @tab Footer
-	// @section footer style
-	// tip: Set the background color and borders for your email's footer area.
-	// @theme footer
+// Footer Styles ------
 
 #templateFooter
 	background-color: $gray-light
-
-
-	// @tab Footer
-	// @section footer text
-	// tip: Set the styling for your email's footer text. Choose a size and color that is easy to read.
-	// @theme footer
 
 .footerContent
 	&.socialicons
 		padding-top: 0
 		img
-			+square(23px)
+			+size(23px)// one value only means it's a square
 
-	color: #808080
+	color: $gray-medium
 	font-family: $font-family-base
 	font-size: $font-size-base - 2
 	line-height: 150%
@@ -550,42 +452,37 @@ $bodyContent-line-height: 150%
 			text-decoration: underline
 
 
-	// @tab Footer
-	// @section footer link
-	// tip: Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
-
-
+// .test
+// 	width: pi
+// 	background: red
 
 // /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/
-@media only screen and (max-width: 480px)
 
+@media only screen and (max-width: 480px)
 	// /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/
 	body, table, td, p, a, li, blockquote
 		-webkit-text-size-adjust: none !important
+	
 	// Prevent Webkit platforms from changing default text sizes
 	body
 		width: 100% !important
 		min-width: 100% !important
 	
-
 	// headings mobile 
+	// mailchimp tip: Make the headings larger in size for better readability on small screens.
+	// I'll just make them a tiny notch smaller
+
 	h1
-		font-size: 24px !important
+		font-size: $h1-font-size - 5
 		line-height: 100% !important
-
-	// tip: Make the second-level headings larger in size for better readability on small screens.
 	h2
-		font-size: 20px !important
+		font-size: $h2-font-size - 3 !important
 		line-height: 100% !important
-
-	// tip: Make the third-level headings larger in size for better readability on small screens.
 	h3
-		font-size: 18px !important
+		font-size: $h3-font-size - 2 !important
 		line-height: 100% !important
-
-	// tip: Make the fourth-level headings larger in size for better readability on small screens.
 	h4
-		font-size: 16px !important
+		font-size: $h4-font-size - 1 !important
 		line-height: 100% !important
 
 	// Prevent iOS Mail from adding padding to the body
@@ -599,7 +496,6 @@ $bodyContent-line-height: 150%
 		a.logo img
 			width: 160px
 
-
 	#templateHeader
 		+border-radius(0px)
 
@@ -612,80 +508,22 @@ $bodyContent-line-height: 150%
 			td:last-child,
 				+border-radius(0)
 
-	// #templateBody
-	// 	padding-left: 
 
-	// #bodyCell
-		// padding: 10px !important
 	// /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/
-
-	// ======== Page Styles ========
-	// @tab Mobile Styles
-	// @section template width
-	// tip: Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
+	// Page Styles ----------------
+	//mailchimp tip: Make the template fluid for portrait or landscape view adaptability.
+	// If a fluid layout doesn't work for you, set the width to 300px instead.
 	#templateContainer
 		max-width: 600px !important
 		width: 100% !important
 
-	// ======== Header Styles ========
-	#templatePreheader
-		display: none !important
-	// Hide the template preheader to save space
 
-	// @tab Mobile Styles
-	// @section header image
-	// tip: Make the main header image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
-	#headerImage
-		height: auto !important
-		max-width: 600px !important
-		width: 100% !important
-
-	// tip: Make the header content text larger in size for better readability 
-	// on small screens. We recommend a font size of at least 16px.
-	// .headerContent
-	// 	font-size: 20px !important
-	// 	line-height: 125% !important
-	// ======== Body Styles ========
-
-	// tip: Make the main body image fluid for portrait or landscape view
-	// adaptability, and set the image's original width as the max-width.
-	// If a fluid setting doesn't work, set the image width to half its original size instead.
-	// #bodyImage
-	// 	height: auto !important
-	// 	// max-width: 560px !important
-	// 	width: 100% !important
-
-	// tip: Make the body content text larger in size for better readability on small screens. 
+	// mailchimp tip: Make the body content text larger in size for better readability on small screens. 
 	// We recommend a font size of at least 16px.
+	// I will make it smaller to better render the tabular data 12 px allows a good enough readability.
 	.bodyContent
 		padding-left: 2px
 		padding-right: 2px
 		font-size: 12px !important
 		line-height: 125% !important
 	
-
-	// ======== Column Styles ========
-	// .templateColumnContainer
-	// 	display: block !important
-	// 	width: 100% !important
-
-	// tip: Make the column image fluid for portrait or landscape
-	// view adaptability, and set the image's original width as 
-	// the max-width. If a fluid setting doesn't work, set the 
-	// image width to half its original size instead.
-	// .columnImage
-	// 	height: auto !important
-	// 	max-width: 260px !important
-	// 	width: 100% !important
-
-	// tip: Make the left column content text larger in size for better
-	// readability on small screens. We recommend a font size of at least 16px.	
-	// .leftColumnContent, .rightColumnContent
-	// 	font-size: 16px !important
-	// 	line-height: 125% !important
-
-	// tip: Make the right column content text larger in size for better
-	// readability on small screens. We recommend a font size of at least 16px.
-
-	// ======== Footer Styles ========
-	// tip: Make the body content text larger in size for better readability on small screens.
